@@ -487,13 +487,13 @@ class WCConfirmSeed(WalletWizardComponent):
         message = ' '.join([
             _('Your seed is important!'),
             _('If you lose your seed, your money will be permanently lost.'),
-            _('To make sure that you have properly saved your seed, please retype it here.')
+            _('To make sure that you have properly saved your seed, please type "saved" here.')
         ])
 
         self.layout().addWidget(WWLabel(message))
 
         self.seed_widget = SeedWidget(
-            is_seed=lambda x: x == self.wizard_data['seed'],
+            is_seed=lambda x: x.strip() == 'saved',
             config=self.wizard.config,
         )
 

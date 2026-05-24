@@ -13,8 +13,7 @@ WizardComponent {
     valid: false
 
     function checkValid() {
-        var seedvalid = wizard.wiz.isMatchingSeed(wizard_data['seed'], confirm.text)
-        valid = seedvalid
+        valid = confirm.text.trim() === 'saved'
     }
 
     Flickable {
@@ -33,7 +32,7 @@ WizardComponent {
                 backgroundColor: constants.darkerDialogBackground
                 text: qsTr('Your seed is important!') + ' ' +
                     qsTr('If you lose your seed, your money will be permanently lost.') + ' ' +
-                    qsTr('To make sure that you have properly saved your seed, please retype it here.')
+                    qsTr('To make sure that you have properly saved your seed, please type "saved" here.')
             }
 
             Label {
